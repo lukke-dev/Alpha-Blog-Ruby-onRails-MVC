@@ -1,0 +1,36 @@
+rails generate scaffold Article title:string description:text
+rails g scaffold "o que vai ser gerado,artigos,produtos,heroes" atributo:tipo do atributo
+
+depois rails db:migrate
+rails routes --expanded
+
+model - singular            ex:article
+table - plural              ex:articles
+arquivo do model:           ex:article.rb
+nome da classe no model:    ex:class Article
+
+rails generation migration create_articles
+# ira criar o arquivo de migrations na pasta db,para gerar a tabela articles
+# adicionamos os campos neste arquivo,ex: t.string :title, t.timestamps
+# e executamos 'rails db:migrate' para criar a tabela
+
+se eu rodar db:migrate denovo, nada vai acontecer pois ele ja executou o migration,
+e mesmo se eu adicionar novos atributos, nao será criado a tabela.
+
+
+ rails db:rollback
+ #reverte a ultima migration, o que me permitiria atualizar o arquivo de migration
+ # e rodar rails db:migrate novamente
+**** está não é a forma correta de fazer isso, pois se algum menbro da equipe baixar o
+ codigo e for rodar, as att nao serao refletidas no db, e ficarao fora de sincronia.
+
+*** o correto é gerar um novo arquivo de migrations
+adicionando timestamps cm um novo migraiton
+EX:
+    rails g migration add_timestamps_to_articles
+dentro da migration:
+    add_column :articles, :created_at, :datetime
+    add_column :articles, :updated_at, :datetime
+    'add coluna' :nomedatable, :nomecoluna, :tipodedado
+
+    e por ultimo db:migrate novamente
