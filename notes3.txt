@@ -1,24 +1,46 @@
-criar um arquivo chamado article.rb(Ex:product.rb, qlqcoisa.rb)
+#####criar um arquivo chamado article.rb(Ex:product.rb, qlqcoisa.rb) dentro da pasta models,
 e dentro dele:
 class Article < ApplicationRecord
 
 end
-
-
-
-
-
 --------------------------------------------
-no rails console:
+######criar articles no rails console:
 
 Article.create(title: "a title", description: "a description")
+só aki e no destroy n preciso do article.save
 
-Article.all
+Article.new(title: "title", description: "description")
+precisa do article.save tbm
+
 article = Article.new
 article.title = 'title'
 article.description = 'description'
 article.save
-
-Article.new(title: "title", description: "description")
-
+----------------------------
+######sair do console:
 exit
+--------------------------
+####listar todos os articles
+Article.all
+-----------------------------
+####listar um article por id
+Article.find(:id) Ex: Article.find(1)
+----------------------------
+###lista o primeiro article: Article.first
+###lista o ultimo article: Article.last
+-article.title #retorna o titulo
+-article.description #retorna a description
+-----------------------------------
+###atualiza os articles
+article = Article.find(2)
+article.title = "new title"
+e por ultimo article.save, para realmente salvar no banco de dados
+-------------------------------
+###deleta o article
+article = Article.find(3)
+article.destroy #não precisa salvar, ja afeta o banco de dados na hora
+
+
+
+sempre que eu crio ou atualizo usando variavel, eu tenho que fazer um article.save
+no final, quando eu deletar nao precisa.
