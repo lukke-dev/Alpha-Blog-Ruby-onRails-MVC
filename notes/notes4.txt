@@ -1,0 +1,11 @@
+criar a validação para os campos no arquivo de model.Ex: /models/article.rb
+validates :title, presence: true
+validates :nomedoatributo, presence: true #igual a required, ou Not Null
+
+reload! #recarrega o console com as mudanças no model.
+
+article.errors.full_messages #mostra a msg de erro que ocorreu.
+article.errors.messages
+------------------------------
+add quantidade minima e maxima na validação
+validates ....., length: { minimum: 3, maximum, 10 }
