@@ -1,0 +1,24 @@
+criar um arquivo chamado article.rb(Ex:product.rb, qlqcoisa.rb)
+e dentro dele:
+class Article < ApplicationRecord
+
+end
+
+
+
+
+
+--------------------------------------------
+no rails console:
+
+Article.create(title: "a title", description: "a description")
+
+Article.all
+article = Article.new
+article.title = 'title'
+article.description = 'description'
+article.save
+
+Article.new(title: "title", description: "description")
+
+exit
