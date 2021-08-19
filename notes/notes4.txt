@@ -9,3 +9,26 @@ article.errors.messages
 ------------------------------
 add quantidade minima e maxima na validação
 validates ....., length: { minimum: 3, maximum, 10 }
+---------------------------------------
+add "resources :articles" no arquivo de rotas, cria todas as rotas do
+crud e mais(index,create,show,update,delete).
+
+para criar apenas uma especifica: "resources :articles, only: [:show]"
+----------------------------------------------------------
+criando a pagina show: criamos a rota atraves do resources acima;
+criamos o articles_controller.rb, defini a action show,
+e dentro da views, criei uma pasta articles e dentro dela o show.html.erb.
+
+declaramos uma variavel de instancia,ex: @article, em vez de apenas article(variavel do metodo)
+
+e para pegar o id que veio pela url, params[:id]
+
+dentro do show ficaria @article = Article.find(params[:id]), desse modo temos acesso
+a variavel dentro das VIEWS.
+para usar codigo ruby nas views, escrevemos ele dentro de <% codigo ruby %>
+                                        <%= codigo ruby que exibira algo na tela%>
+---------------------------------------------------------------------
+posso digitar byebug em cima da action,e qd eu acessar a pagina,
+aparecera uma linha de comando da byebug,posso checar por exemplo
+params[:id], que retornara o valor do id na url.
+'continue' para sair desse terminal e continuar.
