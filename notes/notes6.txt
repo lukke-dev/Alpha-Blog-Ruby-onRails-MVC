@@ -1,0 +1,8 @@
+para salvar na tabela, dentro da action create:
+
+##temos que liberar permissão para title e description,dessa forma abaixo.
+@article = Article.new(params.require(:article).permit(:title,:description))
+@article.save
+redirect_to article_path(@article)
+#article_path, article é o prefixo da url para o show article.
+#e passamos o @article, para ele extrair o id.
