@@ -18,6 +18,7 @@
     <td>
     <%= link_to 'Show', article_path(article)%>
                    <!- "#{article.id}" ->
+    <%= link_to 'Edit', edit_article_path(article) %>
     <%= link_to 'Delete', article_path(article), method: :delete %>
                       <!- "#{article.id}" ->
     </td>
@@ -25,3 +26,4 @@
   <% end %>
   </tbody>
 </table>
+  <button><%= link_to 'Criar novo Artigo', new_article_path %></button>
