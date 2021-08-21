@@ -1,0 +1,28 @@
+puts  = imprimi e pula a linha no console ex: puts "hello world"
+print = imprimi na mesma linha
+---------------------------------------------------------------------------------
+#{variavel} = usado dentro de aspas duplas ex: puts "hello #{name}" (igual a template strings)
+---------------------------------------------------------------------------------
+def nome_do_metodo
+  #conteudo do metodo
+end
+---------------------------------------------------------------------------------
+object.class = para ver o tipo da variavel ex: string,numbers,nil
+---------------------------------------------------------------------------------
+em ruby, tudo é um objeto
+---------------------------------------------------------------------------------
+object.nil? #retorna true se o valor do objeto for nil(null)
+---------------------------------------------------------------------------------
+object.empty? #retorna true se o valor do objeto estiver vazio
+---------------------------------------------------------------------------------
+object.length # qtd de caracteres. Ex: name="lucas" name.length #5
+---------------------------------------------------------------------------------
+object.reverse #retorna o reverso. Ex: [1,2,3].reverse=[3,2,1] "oi".reverse="io"
+---------------------------------------------------------------------------------
+gets.chomp = pega o valor inserido no console
+---------------------------------------------------------------------------------
+\ = para escapar um caracter. Ex: "ola meu nome é \"lucas\""
+---------------------------------------------------------------------------------
+to_f = converte para float
+to_i = converte para integer
+to_s = converte para string
