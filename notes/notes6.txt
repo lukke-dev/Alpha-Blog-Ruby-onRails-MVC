@@ -6,6 +6,9 @@ para salvar na tabela, dentro da action create:
 redirect_to article_path(@article)
 #article_path, article é o prefixo da url para o show article.
 #e passamos o @article, para ele extrair o id.
---------------------------------
+-----------------------------------------------------------------------------
 podemos abreviar isso: redirect_to article_path(@article), para isso
 redirect_to @article
+-----------------------------------------------------------------------------
+
+
