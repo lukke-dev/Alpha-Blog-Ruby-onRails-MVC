@@ -3,5 +3,5 @@ Rails.application.routes.draw do
 
   get 'about', to: 'pages#about'
 
-  resources :articles, only: %i[show index new create]
+  resources :articles
 end
