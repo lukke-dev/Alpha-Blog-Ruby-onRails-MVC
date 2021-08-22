@@ -1,8 +1,6 @@
 <h1>list one article</h1>
-
 <p><strong>Title: </strong><%= @article.title %></p>
 <p><strong>Description: </strong><%= @article.description %></p>
-
-  <button><%= link_to 'Editar Artigo', edit_article_path(@article) %></button>
-  <button><%= link_to 'Deletar Artigo', article_path(@article), method: :delete, data: {confirm: "Tem certeza disso?"} %></button>
-  <button><%= link_to 'Voltar para lista', articles_path %></button>
+<button><%= link_to 'Editar Artigo', edit_article_path(@article) %></button>
+<button><%= link_to 'Deletar Artigo', article_path(@article), method: :delete, data: {confirm: "Tem certeza disso?"} %></button>
+<button><%= link_to 'Voltar para lista', articles_path %></button>

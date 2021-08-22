@@ -1,13 +1,11 @@
-
 <% if @article.errors.any? %>
-<h3>Os seguintes erros impediram a criação do artigo: </h3>
+  <h3>Os seguintes erros impediram a criação do artigo: </h3>
   <ul>
     <% @article.errors.full_messages.each do |msg|%>
       <li><%= msg %></li>
     <% end %>
   </ul>
 <% end %>
-
 <%= form_with(model: @article, local: true) do |f|%>
   <p>
     <%= f.label :title%><br/>
