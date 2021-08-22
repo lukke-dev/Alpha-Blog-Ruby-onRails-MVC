@@ -1,0 +1,14 @@
+criamos um metodo privado para pegar os parametros,
+e substituimos onde ele era usado por este metodo:
+
+def article_params
+    params.require(:article).permit(:title, :description)
+end
+---------------------------------------------------------------
+@article.update(article_params)
+##########################################################################
+
+extraimos a flash messages do application.html.erb e colocamos em um arquivo chamado
+_messages.html.erb, para eu usa-lo na application:
+
+<%= render 'layouts/messages' %>

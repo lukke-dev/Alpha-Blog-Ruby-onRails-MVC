@@ -1,0 +1,17 @@
+refatorando o codigo, vamos substituir coisas repetidas no articles_controller
+
+deletamos a linha abaixo:
+    @article = Article.find(params[:id])
+-------------------------------------------
+definimos um metodo privado:
+private
+
+def set_article
+   @article = Article.find(params[:id])
+end
+-------------------------------------------
+e passamos para ser executado antes, para as action que necessitam dele:
+
+before_action :set_article, only: [:show, :edit, :update, :destroy]
+-----------------------------------------------------------------------
+essa ultima linha significa, execute o metodo set_article no inicio das action mencionadas.
