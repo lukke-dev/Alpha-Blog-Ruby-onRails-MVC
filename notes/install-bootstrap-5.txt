@@ -1,0 +1,14 @@
+yarn add bootstrap
+yarn add @popperjs/core
+------------------------------
+dentro do arquivo packs/application.js:
+import 'bootstrap'
+import '../stylesheets/application'
+
+---------------------------------------
+dentro da pasta javascript, criar a pasta stylesheets/application.scss e dentro:
+@import '~bootstrap/scss/bootstrap'
+
+--------------------------
+inserir no application.html.erb :
+    <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
