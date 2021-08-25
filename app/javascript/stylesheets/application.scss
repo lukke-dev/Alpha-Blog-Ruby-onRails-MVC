@@ -29,3 +29,8 @@
   width: auto !important;
   height: auto !important;
 }
+
+#page-content {
+  flex: 1 0 auto;
+  background-color: lightgray;
+}
