@@ -1,5 +1,14 @@
 @import "~bootstrap/scss/bootstrap";
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+}
+
 .navbar {
   background-color: #3c3c3c !important;
 }
@@ -11,6 +20,7 @@
 .navbar-brand {
   color: #f5f5f5 !important;
   font-size: 1.5rem !important;
+  font-weight: 900 !important;
 }
 
 .btn {
@@ -24,7 +34,6 @@
 
 .jumb {
   background-image: url("/assets/back.jpg") !important;
-  // url(asset-path('mypic.png'))
   background-size: cover !important;
   width: auto !important;
   height: auto !important;
