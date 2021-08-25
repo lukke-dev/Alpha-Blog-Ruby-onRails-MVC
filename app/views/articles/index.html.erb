@@ -1,31 +1,28 @@
-<h1>Articles listing page</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Id</th>
-      <th>Title</th>
-      <th>Description</th>
-      <th>Actions</th>
-    </tr>
-  </thead>
-  <tbody>
-  <% @articles.each do |article| %>
-  <tr>
-    <td><%= article.id %></td>
-    <td><%= article.title %></td>
-    <td><%= article.description %></td>
-    <td>
-    <%= link_to 'Show', article_path(article)%>
-                   <!- "#{article.id}" ->
-    <%= link_to 'Edit', edit_article_path(article) %>
-    <%= link_to 'Delete', article_path(article), method: :delete, data: {confirm: "Tem certeza disso?"} %>
-                      <!- "#{article.id}" ->
-    </td>
-  </tr>
-  <% end %>
-  </tbody>
-</table>
-  <button><%= link_to 'Criar novo Artigo', new_article_path %></button>
-  <button><%= link_to 'Voltar para Home', root_path %></button>
-
+<main class="flex-shrink-0" id="page-content" >
+  <div class="container" >
+    <h1 class="text-center mt-3">Listing all Articles</h1>
+    <% @articles.each do |article| %>
+      <div class="row justify-content-md-center">
+        <div class="col-8 my-3">
+          <div class="card text-center shadow mb-5 rounded">
+            <div class="card-header font-italic">
+              By Lucas-Luke
+            </div>
+            <div class="card-body bg-light">
+              <h5 class="card-title"><%= link_to article.title, article, class: "text-success" %></h5>
+              <p class="card-text"><%= truncate(article.description, length: 100) %></p>
+              <%= link_to "View", article_path(article), class: "btn btn-outline-success" %>
+              <%= link_to "Edit", edit_article_path(article), class: "btn btn-outline-primary" %>
+              <%= link_to "Delete", article_path(article), method: :delete, class: "btn btn-outline-danger" %>
+            </div>
+            <div class="card-footer text-muted">
+              <small>
+                Criado há <%= time_ago_in_words(article.created_at) %> atrás, atualizado há <%= time_ago_in_words(article.updated_at) %> atrás
+              </small>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</main>
