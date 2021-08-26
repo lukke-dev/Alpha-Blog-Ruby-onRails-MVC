@@ -148,9 +148,9 @@ pt-BR:
     select:
       prompt: Por favor selecione
     submit:
-      create: Criar %{model}
+      create: Criar Artigo
       submit: Salvar %{model}
-      update: Atualizar %{model}
+      update: Atualizar Dados
   number:
     currency:
       format:
