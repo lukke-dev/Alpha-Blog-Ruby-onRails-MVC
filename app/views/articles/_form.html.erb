@@ -7,15 +7,19 @@
   </ul>
 <% end %>
 <%= form_with(model: @article, local: true) do |f|%>
-  <p>
-    <%= f.label :title%><br/>
-    <%= f.text_field :title%>
-  </p>
-  <p>
-    <%= f.label :description%><br/>
-    <%= f.text_area :description%>
-  </p>
-  <p>
-    <%= f.submit %>
-  </p>
+  <div class="form-group row">
+    <%= f.label :title, class: "col-2 col-form-label" %><br/>
+    <div class="col-10">
+      <%= f.text_field :title, class: "form-control" %>
+    </div>
+  </div>
+  <div class="form-group row">
+    <%= f.label :description,  class: "col-2 col-form-label" %><br/>
+    <div class="col-10">
+      <%= f.text_area :description, rows: 10, class: "form-control" %>
+    </div>
+  </div>
+  <div class="form-group row">
+    <%= f.submit class: "btn btn-outline-light btn-lg" %>
+  </div>
 <% end %>
