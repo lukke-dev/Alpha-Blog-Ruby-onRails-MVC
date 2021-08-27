@@ -1,14 +1,7 @@
 <div class="container">
-  <% if @article.errors.any? %>
-    <h3>Os seguintes erros impediram a criação do artigo: </h3>
-    <ul>
-      <% @article.errors.full_messages.each do |msg|%>
-        <li><%= msg %></li>
-      <% end %>
-    </ul>
-  <% end %>
   <div class="row justify-content-center mt-3">
     <div class="col-10">
+      <%= render 'shared/errors' %>
       <%= form_with(model: @article, class: "shadow p-3 mb-5 bg-info rounded", local: true) do |f|%>
         <div class="form-group row">
           <%= f.label :titulo, class: "col-2 col-form-label text-light" %><br/>
