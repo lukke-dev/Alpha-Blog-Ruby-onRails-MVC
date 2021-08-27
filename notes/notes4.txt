@@ -8,7 +8,7 @@ article.errors.full_messages #mostra a msg de erro que ocorreu.
 article.errors.messages
 ------------------------------
 add quantidade minima e maxima na validação
-validates ....., length: { minimum: 3, maximum, 10 }
+validates ....., length: { minimum: 3, maximum: 10 }
 ---------------------------------------
 add "resources :articles" no arquivo de rotas, cria todas as rotas do
 crud e mais(index,create,show,update,delete).
