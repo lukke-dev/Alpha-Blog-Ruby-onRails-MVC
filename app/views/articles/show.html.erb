@@ -1,6 +1,24 @@
-<h1>list one article</h1>
-<p><strong>Title: </strong><%= @article.title %></p>
-<p><strong>Description: </strong><%= @article.description %></p>
-<button><%= link_to 'Editar Artigo', edit_article_path(@article) %></button>
-<button><%= link_to 'Deletar Artigo', article_path(@article), method: :delete, data: {confirm: "Tem certeza disso?"} %></button>
-<button><%= link_to 'Voltar para lista', articles_path %></button>
+<main class="flex-shrink-0" id="page-content" >
+  <div class="container" >
+    <h2 class="text-center mt-3"><%= @article.title %></h2>
+    <div class="row justify-content-md-center">
+      <div class="col-8 my-3">
+        <div class="card text-center shadow mb-5 rounded">
+          <div class="card-header font-italic">
+            By Lucas-Luke
+          </div>
+          <div class="card-body bg-light">
+            <div class="card-text text-start"><%= simple_format(@article.description) %></div>
+            <%= link_to "Editar", edit_article_path(@article), class: "btn btn-outline-primary" %>
+            <%= link_to "Deletar", article_path(@article), method: :delete, class: "btn btn-outline-danger" %>
+          </div>
+          <div class="card-footer text-muted">
+            <small>
+              Criado há <%= time_ago_in_words(@article.created_at) %>, atualizado há <%= time_ago_in_words(@article.updated_at) %>
+            </small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
