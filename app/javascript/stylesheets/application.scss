@@ -10,6 +10,10 @@ a {
   text-decoration: none;
 }
 
+body {
+  background-color: lightgray !important;
+}
+
 .navbar {
   background-color: #3c3c3c !important;
 }
@@ -39,4 +43,8 @@ a {
 #page-content {
   flex: 1 0 auto;
   background-color: lightgray;
+}
+
+#body-nav {
+  padding-top: 4.5rem;
 }
