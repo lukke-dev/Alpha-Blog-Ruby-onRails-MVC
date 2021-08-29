@@ -28,8 +28,11 @@
       </ul>
       <form class="d-flex">
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-light" type="submit">Search</button>
       </form>
+      <div class="text-end">
+        <%= link_to "Login", login_path , class: "btn btn-warning me-2" %>
+        <%= link_to "Logout", logout_path , method: :delete, class: "btn btn-warning" %>
+      </div>
     </div>
   </div>
 </nav>
