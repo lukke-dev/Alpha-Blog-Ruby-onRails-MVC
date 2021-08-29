@@ -75,3 +75,17 @@ body {
   border-top-left-radius: 0;
   border-top-right-radius: 0;
 }
+
+.back-to-top {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  background: #ffffff;
+  width: 3rem;
+  height: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  transform: rotate(-90deg);
+}
