@@ -3,7 +3,7 @@
   </svg></h1>
 <h1 class="h3 fw-normal text-center">Log in</h1>
 <div class="form-signin ">
-  <%= form_with(scope: :session, url: login_path class: " p-3 mb-5 rounded", local: true) do |f|%>
+  <%= form_with(scope: :session, url: login_path, class: " p-3 mb-5 rounded", local: true) do |f|%>
     <div class="form-floating">
       <% f.label :email,  class: "text-light" %>
       <div>
