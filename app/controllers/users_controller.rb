@@ -14,6 +14,7 @@ class UsersController < ApplicationController
     if @user.save
       flash[:notice] = "Bem vindo #{@user.username} ao Blog Alpha, usuário criado com sucesso"
       redirect_to articles_path
+      session[:user_id] = @user.id
     else
       render 'new'
     end

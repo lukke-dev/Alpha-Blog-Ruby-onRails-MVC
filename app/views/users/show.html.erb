@@ -1,5 +1,7 @@
 <h1 class="mt-3 text-center">Perfil de <%= @user.username %></h1>
-<%= gravatar_for @user, size: 200 %>
+<div  class="mx-auto" style="width: 200px;">
+  <%= gravatar_for @user, size: 200 %>
+</div>
 <div class="text-center mt-4">
   <%= link_to "Editar Perfil", edit_user_path(@user), class: "btn btn-outline-success" %>
 </div>
