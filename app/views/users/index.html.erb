@@ -8,7 +8,7 @@
         </div>
         <div class="card-body bg-light">
           <%= link_to (gravatar_for user, size: 200), user %>
-          <p class="card-text"><%= pluralize(user.articles.count, "Artigo", plural: "Artigos")%></p>
+          <p class="card-text"><%= pluralize(user.articles.count, "Artigo", plural: "Artigos") %></p>
           <%= link_to "Ver Perfil", user, class: "btn btn-outline-success" %>
           <%= link_to "Editar Perfil", edit_user_path(user), class: "btn btn-outline-primary" %>
         </div>

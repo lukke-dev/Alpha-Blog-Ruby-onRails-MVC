@@ -1,9 +1,12 @@
- <% @articles.each do |article| %>
+<p class="text-center">
+  <%= @articles.length == 0 ? "Este usuário ainda não possui artigos" : "" %>
+</p>
+<% @articles.each do |article| %>
   <div class="row justify-content-md-center">
     <div class="col-8 my-3">
       <div class="card text-center shadow mb-5 rounded">
         <div class="card-header font-italic">
-          Por <%= article.user.username %>
+          Por <%= link_to article.user.username, article.user %>
         </div>
         <div class="card-body bg-light">
           <h5 class="card-title"><%= link_to article.title, article, class: "text-success" %></h5>
