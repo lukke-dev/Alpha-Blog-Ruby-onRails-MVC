@@ -3,30 +3,23 @@
   </svg></h1>
 <h1 class="h3 fw-normal text-center">Log in</h1>
 <div class="form-signin ">
-  <%= form_with(model: @user, class: " p-3 mb-5 rounded", local: true) do |f|%>
-    <div class="form-floating">
-      <% f.label :username, class: "text-light" %>
-      <div class="">
-        <span>Nome de usuário</span>
-        <%= f.text_field :username, class: "form-control rounded", placeholder: "Seu usuário" %>
-      </div>
-    </div>
+  <%= form_with(scope: :session, url: login_path class: " p-3 mb-5 rounded", local: true) do |f|%>
     <div class="form-floating">
       <% f.label :email,  class: "text-light" %>
       <div>
         <span>Email</span>
-        <%= f.email_field :email, class: "form-control rounded", placeholder: "Seu email" %>
+        <%= f.email_field :email, class: "form-control rounded", placeholder: "Digite seu email" %>
       </div>
     </div>
     <div class="form-floating">
       <% f.label :password,  class: "text-light" %>
       <div>
         <span>Senha</span>
-        <%= f.password_field :password, class: "form-control rounded", placeholder: "Sua senha" %>
+        <%= f.password_field :password, class: "form-control rounded", placeholder: "Digite sua senha" %>
       </div>
     </div>
     <div class="form-group row justify-content-center">
-      <%= f.submit (@user.new_record? ? "Criar usuário" : "Atualizar Dados"), class: "w-75 btn btn-outline-dark mt-3"%>
+      <%= f.submit "Fazer login", class: "w-75 btn btn-outline-dark"%>
     </div>
   <% end %>
 </div>
