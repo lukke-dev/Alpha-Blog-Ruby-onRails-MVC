@@ -6,7 +6,7 @@ class UsersController < ApplicationController
   end
 
   def index
-    @users = User.order(:name).page params[:page]
+    @users = User.page params[:page]
   end
 
   def create
@@ -31,7 +31,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    @articles = @user.articles.order(:name).page params[:page]
+    @articles = @user.articles.page params[:page]
   end
 
   private
