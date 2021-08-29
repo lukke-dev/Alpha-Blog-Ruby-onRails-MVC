@@ -3,5 +3,9 @@
 <div class="text-center mt-4">
   <%= link_to "Editar Perfil", edit_user_path(@user), class: "btn btn-outline-success" %>
 </div>
-<h3 class="mt-3 text-center">Artigos</h3>
+<h3 class="my-3 text-center">Artigos</h3>
+<%= paginate @articles %>
 <%= render 'articles/article' %>
+<% unless @articles.length == 1 %>
+  <%= paginate @articles %>
+<% end %>

@@ -1,4 +1,6 @@
-<div class="container" >
-  <h1 class="text-center mt-3">Lista de Artigos</h1>
-  <%= render 'article' %>
-</div>
+<h1 class="text-center mt-3">Lista de Artigos</h1>
+<%= paginate @articles%>
+<%= render 'article' %>
+<% if @articles.length != 1 %>
+  <%= paginate @articles%>
+<% end %>
