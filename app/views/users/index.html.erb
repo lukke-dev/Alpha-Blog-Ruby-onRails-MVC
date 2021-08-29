@@ -1,0 +1,23 @@
+<h1 class="text-center mt-3">Alpha Bloggers</h1>
+<% @users.each do |user| %>
+  <div class="row justify-content-md-center">
+    <div class="col-8 my-3">
+      <div class="card text-center shadow mb-5 rounded">
+        <div class="card-header font-italic">
+          <%= link_to user.username, user %>
+        </div>
+        <div class="card-body bg-light">
+          <%= link_to (gravatar_for user, size: 200), user %>
+          <p class="card-text"><%= pluralize(user.articles.count, "Artigo", plural: "Artigos")%></p>
+          <%= link_to "Ver Perfil", user, class: "btn btn-outline-success" %>
+          <%= link_to "Editar Perfil", edit_user_path(user), class: "btn btn-outline-primary" %>
+        </div>
+        <div class="card-footer text-muted">
+          <small>
+            Entrou há <%= time_ago_in_words(user.created_at) %>
+          </small>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>
