@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: %i[edit update show]
-  before_action :require_user, except: %i[index show]
-  before_action :require_same_user, only: %i[edit update]
+  before_action :set_user, only: %i[edit update show destroy]
+  before_action :require_user, except: %i[index show new create]
+  before_action :require_same_user, only: %i[edit update destroy]
 
   def new
     @user = User.new
@@ -35,6 +35,13 @@ class UsersController < ApplicationController
 
   def show
     @articles = @user.articles.page params[:page]
+  end
+
+  def destroy
+    @user.destroy
+    session[:user_id] = nil
+    flash[:notice] = 'Sua conta e todos os seus Artigos foram apagados.'
+    redirect_to root_path
   end
 
   private

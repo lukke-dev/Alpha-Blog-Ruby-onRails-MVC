@@ -42,6 +42,7 @@
               <li><hr class="dropdown-divider"></li> %>
               <li><%= link_to "Meu perfil", current_user, class: "dropdown-item" %></li>
               <li><%= link_to "Editar perfil", edit_user_path(current_user), class: "dropdown-item" %></li>
+              <li><%= link_to "Deletar perfil", user_path(current_user), class: "dropdown-item text-danger", method: :delete, data: {confirm: "Você tem certeza que quer excluir sua Conta?"} %></li>
               <li><%= link_to "Logout", logout_path , method: :delete, class: "dropdown-item" %></li>
             </ul>
           </div>
