@@ -29,6 +29,11 @@
             <%= link_to "Inscrever-se", signup_path , class: "nav-link" %>
           </li>
         <% end %>
+        <% if logged_in? && current_user.admin? %>
+          <li class="nav-item d-flex align-items-center ">
+            <span class="ms-3 text-warning">( Administrador )</span>
+          </li>
+        <% end %>
       </ul>
       <div class="text-end">
         <% if logged_in? %>
