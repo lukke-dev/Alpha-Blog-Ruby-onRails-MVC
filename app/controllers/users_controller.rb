@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
   before_action :set_user, only: %i[edit update show]
+  before_action :require_user, except: %i[index show]
+  before_action :require_same_user, only: %i[edit update]
 
   def new
     @user = User.new
@@ -43,5 +45,12 @@ class UsersController < ApplicationController
 
   def set_user
     @user = User.find(params[:id])
+  end
+
+  def require_same_user
+    if current_user != @user
+      flash[:alert] = 'Você só pode editar seu proprio usuário.'
+      redirect_to @user
+    end
   end
 end
