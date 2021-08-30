@@ -226,3 +226,5 @@ pt-BR:
     pagination:
       first: "&laquo; Primeira"
       last: "Ultima &raquo;"
+      previous: "<"
+      next: ">"
