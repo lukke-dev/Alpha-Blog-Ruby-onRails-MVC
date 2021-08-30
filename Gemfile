@@ -12,6 +12,7 @@ gem 'jbuilder', '~> 2.7'
 gem 'bootstrap', '~> 5.1.0'
 gem 'bcrypt', '~> 3.1.7'
 gem 'kaminari'
+gem 'rexml', require: false
 
 
 gem 'bootsnap', '>= 1.4.4', require: false
