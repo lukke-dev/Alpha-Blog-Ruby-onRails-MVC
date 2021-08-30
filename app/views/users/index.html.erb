@@ -11,7 +11,9 @@
           <%= link_to (gravatar_for user, size: 200), user %>
           <p class="card-text"><%= pluralize(user.articles.count, "Artigo", plural: "Artigos") %></p>
           <%= link_to "Ver Perfil", user, class: "btn btn-outline-success" %>
-          <%= link_to "Editar Perfil", edit_user_path(user), class: "btn btn-outline-primary" %>
+          <% if logged_in? && user == current_user %>
+            <%= link_to "Editar Perfil", edit_user_path(user), class: "btn btn-outline-primary" %>
+          <% end %>
         </div>
         <div class="card-footer text-muted">
           <small>

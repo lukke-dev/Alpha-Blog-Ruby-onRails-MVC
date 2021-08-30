@@ -1,12 +1,12 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-dark fixed-top">
   <div class="container-fluid">
-    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-x-diamond-fill text-info mx-2" viewBox="0 0 16 16">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-x-diamond-fill text-info ms-4" viewBox="0 0 16 16">
       <path d="M9.05.435c-.58-.58-1.52-.58-2.1 0L4.047 3.339 8 7.293l3.954-3.954L9.049.435zm3.61 3.611L8.708 8l3.954 3.954 2.904-2.905c.58-.58.58-1.519 0-2.098l-2.904-2.905zm-.706 8.614L8 8.708l-3.954 3.954 2.905 2.904c.58.58 1.519.58 2.098 0l2.905-2.904zm-8.614-.706L7.292 8 3.339 4.046.435 6.951c-.58.58-.58 1.519 0 2.098l2.904 2.905z"/>
     </svg>
     <%= link_to "ALPHA", root_path, class: "navbar-brand"%>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+    <form class="d-flex">
+      <input class="form-control me-2 h-25" type="search" placeholder="Procurar Artigos" aria-label="Search">
+    </form>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
@@ -17,9 +17,11 @@
             Artigos
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <%= link_to "Criar novo artigo", new_article_path, class: "dropdown-item" %>
-            <li><hr class="dropdown-divider"></li>
-            <%= link_to "Ver artigos", articles_path, class: "dropdown-item" %>
+            <% if logged_in? %>
+              <li><%= link_to "Criar novo artigo", new_article_path, class: "dropdown-item" %></li>
+              <li><hr class="dropdown-divider"></li>
+            <% end %>
+            <li><%= link_to "Ver artigos", articles_path, class: "dropdown-item" %></li>
           </ul>
         </li>
         <% unless logged_in? %>
@@ -28,9 +30,6 @@
           </li>
         <% end %>
       </ul>
-      <form class="d-flex">
-        <input class="form-control me-2" type="search" placeholder="Procurar Artigos" aria-label="Search">
-      </form>
       <div class="text-end">
         <% if logged_in? %>
           <div class="flex-shrink-0">
@@ -42,11 +41,12 @@
               <li><a class="dropdown-item" href="#">Settings</a></li>
               <li><hr class="dropdown-divider"></li> %>
               <li><%= link_to "Meu perfil", current_user, class: "dropdown-item" %></li>
+              <li><%= link_to "Editar perfil", edit_user_path(current_user), class: "dropdown-item" %></li>
               <li><%= link_to "Logout", logout_path , method: :delete, class: "dropdown-item" %></li>
             </ul>
           </div>
         <% else %>
-          <%= link_to "Login", login_path , class: "btn btn-outline-warning me-2" %>
+          <%= link_to "Login", login_path , class: "btn btn-outline-light me-2" %>
         <% end %>
       </div>
     </div>
