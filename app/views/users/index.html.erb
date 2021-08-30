@@ -16,7 +16,8 @@
               <%= link_to "Editar Perfil", edit_user_path(user), class: "btn btn-outline-primary" %>
             <% end%>
             <% if current_user.admin? %>
-              <%= link_to "Deletar Perfil", user_path(user), method: :delete, class: "btn btn-outline-danger" %>
+              <%= link_to "Deletar Perfil", user_path(user), method: :delete, class: "btn btn-outline-danger",
+              data: {confirm: "Tem certeza que deseja deletar o perfil e todos os seus artigos?"} %>
             <% end %>
           <% end %>
         </div>

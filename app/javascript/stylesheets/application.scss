@@ -35,10 +35,8 @@ body {
 
 .jumb {
   background-image: url("https://images.unsplash.com/photo-1432821596592-e2c18b78144f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=750&q=80") !important;
-  background-position: center center;
   background-repeat: no-repeat;
-  background-size: cover;
-  height: 425px;
+  background-size: 100%;
 }
 
 #page-content {
@@ -89,4 +87,25 @@ body {
   align-items: center;
   border-radius: 50%;
   transform: rotate(-90deg);
+}
+
+.carousel-item {
+  height: 25rem;
+}
+.carousel-item > img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  height: 25rem;
+  background-size: 100%;
+}
+
+.carousel-caption {
+  bottom: 3rem;
+  z-index: 10;
+}
+
+.carousel {
+  margin-bottom: 4rem;
 }
