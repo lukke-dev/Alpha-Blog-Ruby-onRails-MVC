@@ -1,0 +1,17 @@
+<div class="container">
+  <%= render 'shared/errors', obj: @category %>
+</div>
+<div class="form-signin mt-5">
+  <%= form_with(model: @category, class: " p-3 mb-5 rounded", local: true) do |f|%>
+    <div class="form-floating">
+      <% f.label :name, class: "text-light" %>
+      <div >
+        <span>Nome da categoria</span>
+        <%= f.text_field :name, class: "form-control rounded", placeholder: "Nova categoria" %>
+      </div>
+    </div>
+    <div class="form-group row justify-content-center">
+      <%= f.submit "+ Criar Categoria", class: "w-75 btn btn-outline-dark mt-3"%>
+    </div>
+  <% end %>
+</div>
