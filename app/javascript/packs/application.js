@@ -10,6 +10,15 @@ import "channels";
 import "bootstrap";
 import "../stylesheets/application";
 
+window.addEventListener("wheel", () => {
+  let but = window.document.querySelector(".back-to-top");
+  if (window.scrollY > 10) {
+    but.classList.add("move");
+  }
+  if (window.scrollY < 10) {
+    but.classList.remove("move");
+  }
+});
 Rails.start();
 Turbolinks.start();
 ActiveStorage.start();

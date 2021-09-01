@@ -87,6 +87,12 @@ body {
   align-items: center;
   border-radius: 50%;
   transform: rotate(-90deg);
+  opacity: 0;
+  transition: all ease 1s;
+}
+
+.back-to-top.move {
+  opacity: 1;
 }
 
 .carousel-item {
