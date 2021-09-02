@@ -16,7 +16,7 @@
           </div>
         </div>
         <div class="form-group row mt-4">
-          <%= f.label :categorias ,  class: "col-2 col-form-label text-danger" %><br/>
+          <%= f.label :categorias ,  class: "col-2 col-form-label text-light" %><br/>
           <div class="col-10 text-dark mt-2 font-monospace ">
             <%= f.collection_check_boxes :category_ids, Category.all, :id, :name %>
           </div>
