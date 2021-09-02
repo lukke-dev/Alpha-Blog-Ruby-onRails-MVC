@@ -1,0 +1,7 @@
+<h1 class="text-center mt-3 mb-3">Artigos com o nome: <%= @query %></h1>
+<%= paginate @articles%>
+<%= render 'articles/article' %>
+<% if @articles.length != 1 %>
+  <%= paginate @articles%>
+<% end %>
+<a class="back-to-top text-light bg-dark" href="#">➤</a>
