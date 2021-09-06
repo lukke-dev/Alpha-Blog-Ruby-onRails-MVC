@@ -1,3 +1,4 @@
+install pg para produção
 bundle install --without production
 
 git push heroku master
