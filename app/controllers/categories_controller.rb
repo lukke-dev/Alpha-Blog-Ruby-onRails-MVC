@@ -5,6 +5,20 @@ class CategoriesController < ApplicationController
     @categories = Category.order(:name).page(params[:page])
   end
 
+  def edit
+    @category = Category.find(params[:id])
+  end
+
+  def update
+    @category = Category.find(params[:id])
+    if @category.update(category_params)
+      flash[:notice] = 'Categoria atualizada com succeso!'
+      redirect_to @category
+    else
+      render 'edit'
+    end
+  end
+
   def show
     @category = Category.find(params[:id])
     @articles = @category.articles.page params[:page]
